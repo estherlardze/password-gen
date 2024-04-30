@@ -1,12 +1,22 @@
+import styled, {createGlobalStyle} from 'styled-components'
 
-import './App.css'
 
+const GlobalStyles = createGlobalStyle`
+  body{
+    background-color: #18171f;
+    color: #fff;
+    padding:0;
+    margin:0;
+  }
+`
 function App() {
 
   return (
-    <>
+    <div>
+      <GlobalStyles/>
      <h1>hello</h1>
-    </>
+     <p>hhhhhhhhhhhhhhhhhhhhhhhhh</p>
+    </div>
   )
 }
 
