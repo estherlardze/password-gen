@@ -1,5 +1,5 @@
-import { GlobalStyles, HeadingStyle } from './styles'
-import Input from './Input'
+import { GlobalStyles, HeadingStyle } from './GlobalStyles'
+import Input from './components/Input'
 
 
 function App() {

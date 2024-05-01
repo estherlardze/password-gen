@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { iconcopy } from './assets';
+import { iconcopy } from '../assets';
 
 const DivStyles = styled.div`
     width: 540px;
