@@ -1,11 +1,13 @@
 import { GlobalStyles, HeadingStyle } from './styles'
-function App() {
+import Input from './Input'
 
+
+function App() {
   return (
     <div>
       <GlobalStyles/>
       <HeadingStyle>Password Generator</HeadingStyle>
-     <p></p>
+      <Input/>
     </div>
   )
 }
