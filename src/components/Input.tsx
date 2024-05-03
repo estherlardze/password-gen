@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { iconcopy } from '../assets';
+import { FormValues } from '../App';
 
 const DivStyles = styled.div`
     width: 540px;
@@ -31,14 +32,21 @@ const ImageStyles = styled.img`
   }
 `
 
-const Input = () => {
+interface GenerateProps {
+  formData: FormValues;
+  handleFormChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+
+}
+
+const Input:React.FC<GenerateProps> = ({formData, handleFormChange})=> {
 
   return (
     <DivStyles>
         <InputStyles 
           type="text" 
           placeholder='PTx1f5DaFX!' 
-
+          value={formData.password}
+          onChange={handleFormChange}
           />
           <ImageStyles src={iconcopy} alt="copy icon"/>
     </DivStyles>
