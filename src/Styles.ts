@@ -8,7 +8,7 @@ export const GenerateStyles = styled.div`
     color:#E6E5EA;
 `
 
-export const DivStyles = styled.div`
+export const ChracterStyles = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -23,8 +23,6 @@ export const RangeInput = styled.input`
   margin-bottom: 10px;
   accent-color: #A4FFAF;
 `;
-
-
 
 export const GenerateButton = styled.div`
   display:flex;
@@ -60,5 +58,35 @@ export const Include = styled.div`
  display: flex;
  align-items:center;
  margin-top: 10px;
+`
+
+export const DivStyles = styled.div`
+    width: 540px;
+    height: 50px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #24232c;
+    color:#E6E5EA;
+`
+
+export const InputStyles = styled.input`
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  color: white;
+  width:100%;
+`
+
+export const ImageStyles = styled.img`
+  transition: all 0.5s;
+  filter: grayscale(0%);
+
+  &:hover {
+    cursor: pointer;
+    filter: grayscale(100%);
+  }
 `
 
