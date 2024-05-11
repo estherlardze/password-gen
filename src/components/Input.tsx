@@ -8,10 +8,10 @@ import { DivStyles, InputStyles, ImageStyles } from '../Styles';
 type GenerateProps = {
   formData: FormValues;
   handleFormChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  copytoclip : (str: string) => Promise<void>
 }
 
-const Input:React.FC<GenerateProps> = ({formData, handleFormChange})=> {
-  const [copied, setCopied] = useState(false);
+const Input:React.FC<GenerateProps> = ({formData, handleFormChange, copytoclip})=> {
 
   return (
     <DivStyles>
@@ -21,11 +21,13 @@ const Input:React.FC<GenerateProps> = ({formData, handleFormChange})=> {
           value={formData.password}
           onChange={handleFormChange}
           />
-         <ImageStyles 
+          <div onClick={() => copytoclip(formData.password)}>
+          <ImageStyles 
           src={iconcopy} 
           alt="copy icon"
-          onClick={() => copyToClipboard(formData.password, () => setCopied(true))}
-/>
+          />
+          </div>
+         
     </DivStyles>
   )
 }

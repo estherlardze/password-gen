@@ -73,19 +73,25 @@ function App() {
     setFormData({ ...formData, password: _password });
   };
   
+  const copytoclip = async(str: string) => {
+   if(navigator.clipboard && navigator.clipboard.writeText) {
+    return await navigator.clipboard.writeText(str);
+   }
+    throw new Error(`Cannot copy`)
+  }
+
   return (
     <div>
       <GlobalStyles />
       <HeadingStyle>Password Generator</HeadingStyle>
-      <Input formData={formData} handleFormChange={handleFormChange} />
+      <Input formData={formData} handleFormChange={handleFormChange} copytoclip={copytoclip}/>
       <br />
-      <Generate
+      <Generate 
         formData={formData}
         handleFormChange={handleFormChange}
         generatePassword={generatePassword}
       />
-    
-    </div>
+    </div> 
   );
 }
 

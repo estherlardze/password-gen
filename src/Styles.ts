@@ -6,6 +6,19 @@ export const GenerateStyles = styled.div`
     padding: 10px 20px;
     background-color: #24232c;
     color:#E6E5EA;
+    
+    @media (max-width: 650px) {
+       width: 400px;
+    }
+    @media (max-width: 500px) {
+       width: 330px;
+    }
+    @media (max-width: 400px) {
+       width: 300px;
+    }
+    @media (max-width: 360px) {
+       width: 250px;
+    }
 `
 
 export const ChracterStyles = styled.div`
@@ -69,6 +82,19 @@ export const DivStyles = styled.div`
     align-items: center;
     background-color: #24232c;
     color:#E6E5EA;
+
+    @media (max-width: 650px) {
+       width: 400px;
+    }
+    @media (max-width: 500px) {
+       width: 330px;
+    }
+    @media (max-width: 400px) {
+       width: 300px;
+    }
+    @media (max-width: 360px) {
+       width: 250px;
+    }
 `
 
 export const InputStyles = styled.input`
