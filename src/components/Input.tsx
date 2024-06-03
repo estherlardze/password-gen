@@ -1,35 +1,36 @@
-import React, { useState } from 'react';
-import { iconcopy } from '../assets';
-import { FormValues } from '../App';
-import { DivStyles, InputStyles, ImageStyles } from '../Styles';
-
-
+import React from "react";
+import { iconcopy } from "../assets";
+import { DivStyles, InputStyles, ImageStyles, CopyDiv } from "../Styles";
 
 type GenerateProps = {
-  formData: FormValues;
+  password: string;
   handleFormChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  copytoclip : (str: string) => Promise<void>
-}
+  copytoclip: (str: string) => Promise<void>;
+  copied: boolean;
+};
 
-const Input:React.FC<GenerateProps> = ({formData, handleFormChange, copytoclip})=> {
-
+const Input = ({
+  password,
+  handleFormChange,
+  copytoclip,
+  copied,
+}: GenerateProps) => {
   return (
     <DivStyles>
-        <InputStyles 
-          type="text" 
-          placeholder='PTx1f5DaFX!' 
-          value={formData.password}
-          onChange={handleFormChange}
-          />
-          <div onClick={() => copytoclip(formData.password)}>
-          <ImageStyles 
-          src={iconcopy} 
-          alt="copy icon"
-          />
-          </div>
-         
+      <InputStyles
+        type="text"
+        placeholder="PTx1f5DaFX!"
+        value={password}
+        onChange={handleFormChange}
+      />
+      <CopyDiv>
+        <small>{password && copied ? "copied" : ""}</small>
+        <div onClick={() => copytoclip(password)}>
+          <ImageStyles src={iconcopy} alt="copy icon" />
+        </div>
+      </CopyDiv>
     </DivStyles>
-  )
-}
+  );
+};
 
-export default Input
+export default Input;

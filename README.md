@@ -1,30 +1,48 @@
-# React + TypeScript + Vite
+# Password Generator App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Page](./page.png)
 
-Currently, two official plugins are available:
+This app is a simple, user-friendly application that allows users to generate secure passwords based on selected options. Users can copy the generated password to their clipboard, see a strength rating for the password.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Password Generation**: Generate a password based on selected inclusion options (uppercase letters, lowercase letters, numbers, symbols).
+- **Clipboard Copy**: Copy the generated password your clipboard with a single click.
+- **Password Strength Rating**: View a strength rating for the generated password to ensure security.
+- **Responsive Design**: The interface adapts to different device screen sizes for optimal user experience.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
+## Installation
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/estherlardze/password-gen.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd password-gen
+   ```
+3. Install the dependencies:
+   ```bash
+   npm install
+   ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Usage
+
+1. Start the development server:
+   ```bash
+   npm run dev
+   ```
+2. Open your browser and go to `http://localhost:3000` to view the app.
+3. Select the options for password generation (e.g., include uppercase, lowercase, numbers, symbols).
+4. Click the "Generate Password" button to create a new password.
+5. View the generated password and its strength rating.
+6. Click the "Copy to Clipboard" button to copy the password.
+
+## Technologies
+
+- **React**: A JavaScript library for building user interfaces.
+- **Typescript**: For checking data types.
+- **JavaScript**: For logic and interactivity.
+- **Clipboard API**: For copying the password to the clipboard.
+

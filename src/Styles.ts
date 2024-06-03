@@ -116,3 +116,10 @@ export const ImageStyles = styled.img`
   }
 `
 
+export const CopyDiv = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #A4FFAF;
+`
+

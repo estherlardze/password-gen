@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { FiArrowRight } from "react-icons/fi";
 import Form from "./Form";
 import { FormValues } from "../App";
@@ -10,38 +9,37 @@ import {
   Strength,
 } from "../Styles";
 
-
-const strengthLevels = ["", "Too weak!", "weak", "medium", "strong"];
-
 type GenerateProps = {
   handleFormChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   generatePassword: () => void;
   formData: FormValues;
-}
+  checkedCount: number;
+  setCheckedCount: React.Dispatch<React.SetStateAction<number>>;
+  strength: string;
+  changebg: string;
+};
 
-const Generate: React.FC<GenerateProps> = ({formData,handleFormChange, generatePassword,}) => {
-  const [checkedCount, setCheckedCount] = useState(0);
-
-
-  const handleCheckboxChange = () => {
-    const checkboxes = document.querySelectorAll('input[type="checkbox"]') as NodeListOf<HTMLInputElement>;
-    let count = 0;
-    checkboxes.forEach((checkbox) => {
-      if (checkbox.checked) {
-        count++;
-      }
-    });
-    setCheckedCount(count);
-  };
+const Generate = ({
+  formData,
+  handleFormChange,
+  generatePassword,
+  changebg,
+  strength,
+}: GenerateProps) => {
 
   const getBarColor = (index: number) => {
-    if (index < checkedCount) {
-      if (checkedCount === 1) return "#F64A4A";
-      if (checkedCount === 2) return "#FB7C58";
-      if (checkedCount === 3) return "#F8CD65";
-      if (checkedCount === 4) return "#A4FFAF";
+    switch (strength) {
+      case "Too Weak":
+        return index === 0 ? changebg : "#817D92";
+      case "Weak":
+        return index < 2 ? changebg : "#817D92";
+      case "Medium":
+        return index < 3 ? changebg : "#817D92";
+      case "Strong":
+        return changebg;
+      default:
+        return "#817D92";
     }
-    return "transparent";
   };
 
   return (
@@ -66,7 +64,7 @@ const Generate: React.FC<GenerateProps> = ({formData,handleFormChange, generateP
         <h3 style={{ color: "#817D92" }}>STRENGTH</h3>
         <div style={{ display: "flex", alignItems: "center", gap: "15px" }}>
           <h2 style={{ textTransform: "uppercase", fontWeight: "600" }}>
-            {strengthLevels[Math.min(checkedCount, strengthLevels.length - 1)]}
+            {strength}
           </h2>
           <article
             style={{ display: "flex", alignItems: "center", gap: "10px" }}
@@ -78,7 +76,7 @@ const Generate: React.FC<GenerateProps> = ({formData,handleFormChange, generateP
                   width: "7px",
                   height: "24px",
                   backgroundColor: getBarColor(index),
-                  border: "2px solid #e7f1e8",
+                  border: `2px solid ${strength === "" ? "#817D92" : getBarColor(index)}`,
                 }}
               ></div>
             ))}

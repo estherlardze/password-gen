@@ -4,10 +4,10 @@ import { FormValues } from "../App";
 type GenerateProps = {
   formData: FormValues;
   handleFormChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-}
+};
 
-const Form: React.FC<GenerateProps> = ({ formData, handleFormChange }) => {
-  console.log(formData);
+const Form = ({ formData, handleFormChange }: GenerateProps) => {
+  const { uppercase, lowercase, number, symbol } = formData;
 
   return (
     <form>
@@ -15,8 +15,8 @@ const Form: React.FC<GenerateProps> = ({ formData, handleFormChange }) => {
         <input
           type="checkbox"
           id="uppercase"
-          name="isUppercase"
-          checked={formData.isUppercase}
+          name="uppercase"
+          checked={uppercase}
           style={{ accentColor: "#A4FFAF" }}
           onChange={handleFormChange}
         />
@@ -27,8 +27,8 @@ const Form: React.FC<GenerateProps> = ({ formData, handleFormChange }) => {
         <input
           type="checkbox"
           id="lowercase"
-          name="isLowercase"
-          checked={formData.isLowercase}
+          name="lowercase"
+          checked={lowercase}
           style={{ accentColor: "#A4FFAF" }}
           onChange={handleFormChange}
         />
@@ -39,8 +39,8 @@ const Form: React.FC<GenerateProps> = ({ formData, handleFormChange }) => {
         <input
           type="checkbox"
           id="number"
-          name="isNumber"
-          checked={formData.isNumber}
+          name="number"
+          checked={number}
           style={{ accentColor: "#A4FFAF" }}
           onChange={handleFormChange}
         />
@@ -51,8 +51,8 @@ const Form: React.FC<GenerateProps> = ({ formData, handleFormChange }) => {
         <input
           type="checkbox"
           id="symbol"
-          name="isSymbol"
-          checked={formData.isSymbol}
+          name="symbol"
+          checked={symbol}
           style={{ accentColor: "#A4FFAF" }}
           onChange={handleFormChange}
         />
