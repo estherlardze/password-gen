@@ -1,4 +1,4 @@
-import { Include } from "../Styles";
+import { Include, Checkmark } from "../Styles";
 import { FormValues } from "../App";
 
 type GenerateProps = {
@@ -12,48 +12,44 @@ const Form = ({ formData, handleFormChange }: GenerateProps) => {
   return (
     <form>
       <Include>
-        <input
+        <Checkmark
           type="checkbox"
           id="uppercase"
           name="uppercase"
           checked={uppercase}
-          style={{ accentColor: "#A4FFAF" }}
           onChange={handleFormChange}
         />
         <label htmlFor="uppercase">Include uppercase</label>
       </Include>
 
       <Include>
-        <input
+        <Checkmark
           type="checkbox"
           id="lowercase"
           name="lowercase"
           checked={lowercase}
-          style={{ accentColor: "#A4FFAF" }}
           onChange={handleFormChange}
         />
         <label htmlFor="lowercase">Include lowercase</label>
       </Include>
 
       <Include>
-        <input
+        <Checkmark
           type="checkbox"
           id="number"
           name="number"
           checked={number}
-          style={{ accentColor: "#A4FFAF" }}
           onChange={handleFormChange}
         />
         <label htmlFor="number">Include numbers</label>
       </Include>
 
       <Include>
-        <input
+        <Checkmark
           type="checkbox"
           id="symbol"
           name="symbol"
           checked={symbol}
-          style={{ accentColor: "#A4FFAF" }}
           onChange={handleFormChange}
         />
         <label htmlFor="symbol">Include symbols</label>

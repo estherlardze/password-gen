@@ -44,8 +44,6 @@ function App() {
     }
   };
 
-  //console.log("formdata", formData)
-
   const getRandomPassword = () => {
     let chars = [];
 
@@ -97,27 +95,30 @@ function App() {
     if (/[!'^+%&/()=?_#$½§{[\]}|;:>÷`<.*-@é]/.test(password)) score += 1;
 
     switch (score) {
-      case 0:
-        setStrength("");
-        break;
-      case 1:
-        setStrength("Too Weak");
-        setChangeBg("#F64A4A");
-        break;
-      case 2:
-        setStrength("Weak");
-        setChangeBg("#FB7C58");
-        break;
-      case 3:
-        setStrength("Medium");
-        setChangeBg("#F8CD65");
-        break;
-      case 4:
-        setStrength("Strong");
-        setChangeBg("#A4FFAF");
-        break;
+        case 0:
+        case 1:
+            setStrength("Too Weak!");
+            setChangeBg("#F64A4A");
+            break;
+        case 2:
+            setStrength("Weak");
+            setChangeBg("#FB7C58");
+            break;
+        case 3:
+            setStrength("Medium");
+            setChangeBg("#F8CD65");
+            break;
+        case 4:
+            setStrength("Strong");
+            setChangeBg("#A4FFAF");
+            break;
+        default:
+            setStrength("Unknown");
+            setChangeBg("#D3D3D3");
+            break;
     }
-  };
+};
+
 
   const generatePassword = () => {
     let _password = "";

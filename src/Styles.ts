@@ -56,6 +56,13 @@ export const GenerateButton = styled.div`
       color: #A4FFAF;
   }
 `
+export const Checkmark = styled.input`
+accent-color: #A4FFAF;
+
+&:hover{
+   accent-color: #A4FFAF;
+}
+`
 
 export const Strength = styled.div`
 margin: 10px 0;
@@ -65,6 +72,17 @@ display: flex;
 gap: 10px;
 justify-content: space-between;
 align-items: center
+`;
+
+export const StrengthText = styled.h2`
+text-transform: uppercase;
+font-weight: 600;
+font-size: 14px 
+`
+export const FlexStyle = styled.div`
+display: flex;
+align-items: center;
+gap:10px; 
 `
 
 export const Include = styled.div`

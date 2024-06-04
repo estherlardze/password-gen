@@ -7,6 +7,8 @@ import {
   RangeInput,
   GenerateButton,
   Strength,
+  FlexStyle,
+  StrengthText,
 } from "../Styles";
 
 type GenerateProps = {
@@ -26,20 +28,22 @@ const Generate = ({
   changebg,
   strength,
 }: GenerateProps) => {
+  const getBarStyle = (index: number) => {
+    const thresholds: { [key: string]: number } = {
+      "Too Weak!": 1,
+      Weak: 2,
+      Medium: 3,
+      Strong: 4,
+    };
 
-  const getBarColor = (index: number) => {
-    switch (strength) {
-      case "Too Weak":
-        return index === 0 ? changebg : "#817D92";
-      case "Weak":
-        return index < 2 ? changebg : "#817D92";
-      case "Medium":
-        return index < 3 ? changebg : "#817D92";
-      case "Strong":
-        return changebg;
-      default:
-        return "#817D92";
-    }
+    const threshold = thresholds[strength] || 0;
+    return {
+      width: "8px",
+      height: "24px",
+      backgroundColor: index < threshold ? changebg : "transparent",
+      border:
+        index < threshold ? ` 2px solid ${changebg}` : "2px solid #817D92",
+    };
   };
 
   return (
@@ -62,26 +66,14 @@ const Generate = ({
 
       <Strength>
         <h3 style={{ color: "#817D92" }}>STRENGTH</h3>
-        <div style={{ display: "flex", alignItems: "center", gap: "15px" }}>
-          <h2 style={{ textTransform: "uppercase", fontWeight: "600" }}>
-            {strength}
-          </h2>
-          <article
-            style={{ display: "flex", alignItems: "center", gap: "10px" }}
-          >
+        <FlexStyle>
+          <StrengthText>{strength}</StrengthText>
+          <FlexStyle>
             {[...Array(4)].map((_, index) => (
-              <div
-                key={index}
-                style={{
-                  width: "7px",
-                  height: "24px",
-                  backgroundColor: getBarColor(index),
-                  border: `2px solid ${strength === "" ? "#817D92" : getBarColor(index)}`,
-                }}
-              ></div>
+              <div key={index} style={getBarStyle(index)}></div>
             ))}
-          </article>
-        </div>
+          </FlexStyle>
+        </FlexStyle>
       </Strength>
 
       <GenerateButton onClick={generatePassword}>
