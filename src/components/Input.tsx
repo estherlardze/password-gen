@@ -24,7 +24,7 @@ const Input = ({
         onChange={handleFormChange}
       />
       <CopyDiv>
-        <small>{password && copied ? "copied" : ""}</small>
+        <small style={{ fontSize: "18px" }}>{password && copied ? "COPIED" : ""}</small>
         <div onClick={() => copytoclip(password)}>
           <ImageStyles src={iconcopy} alt="copy icon" />
         </div>

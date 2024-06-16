@@ -27,15 +27,69 @@ export const ChracterStyles = styled.div`
   align-items: center;
 `
 
+
 export const RangeInput = styled.input`
   width: 100%;
-  background-color: black;
-  height: 10px;
+  background: black;
+  height: 12px; 
   outline: none;
+  border-radius: 12px; 
   transition: background-color 0.2s;
   margin-bottom: 10px;
   accent-color: #A4FFAF;
+  overflow: hidden;
+  appearance: none;
+  -webkit-appearance: none;
+  box-shadow: inset 0px 3px 18px rgba(0, 0, 0, 0.35);
+
+  &::-webkit-slider-thumb {
+    appearance: none;
+    height: 13px; 
+    width: 13px;
+    background: #fff;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    cursor: pointer;
+    box-shadow: -407px 0 0 400px #A4FFAF;
+  }
+
+  &::-moz-range-thumb {
+    height: 13px;
+    width: 13px;
+    background: #fff;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    cursor: pointer; 
+  }
+
+  &::-ms-thumb {
+    height: 13px; 
+    width: 13px;
+    background: #fff;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    cursor: pointer;
+  }
+
+  &:hover {
+    &::-webkit-slider-thumb {
+      background: black;
+      border: 2px solid #A4FFAF;
+      transition: all 0.5s;
+    }
+    &::-moz-range-thumb {
+      background: black;
+      border: 2px solid #A4FFAF;
+      transition: all 0.5s;
+    }
+    &::-ms-thumb {
+      background: black;
+      border: 2px solid #A4FFAF;
+      transition: all 0.5s;
+    }
+  }
 `;
+
 
 export const GenerateButton = styled.div`
   display:flex;
