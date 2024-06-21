@@ -1,6 +1,6 @@
 import { FiArrowRight } from "react-icons/fi";
 import Form from "./Form";
-import { FormValues } from "../App";
+import { FormValues } from "./Home";
 import {
   GenerateStyles,
   ChracterStyles,
@@ -28,6 +28,8 @@ const Generate = ({
   changebg,
   strength,
 }: GenerateProps) => {
+
+
   const getBarStyle = (index: number) => {
     const thresholds: { [key: string]: number } = {
       "Too Weak!": 1,

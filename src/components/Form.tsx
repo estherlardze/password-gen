@@ -7,6 +7,7 @@ type GenerateProps = {
 };
 
 const Form = ({ formData, handleFormChange }: GenerateProps) => {
+  
   const { uppercase, lowercase, number, symbol } = formData;
 
   return (
